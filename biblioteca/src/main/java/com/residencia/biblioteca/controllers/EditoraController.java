@@ -58,6 +58,11 @@ public class EditoraController {
 		return new ResponseEntity<>(editoraService.saveEditora(editora), HttpStatus.CREATED);
 	}
 	
+	@PostMapping("/dto")
+	public ResponseEntity<EditoraResumidaDTO> saveEditoraDTO(@RequestBody EditoraResumidaDTO editoraResumidaDTO) {
+		return new ResponseEntity<>(editoraService.saveEditoraDTO(editoraResumidaDTO), HttpStatus.CREATED);
+	}
+	
 	@PutMapping
 	public ResponseEntity<Editora> updateEditora(@RequestBody Editora editora, Integer id) {
 		return new ResponseEntity<>(editoraService.updateEditora(editora, id), HttpStatus.OK);

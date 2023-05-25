@@ -136,5 +136,14 @@ public class Aluno {
 
 	public void setListaEmprestimo(List<Emprestimo> listaEmprestimo) {
 		this.listaEmprestimo = listaEmprestimo;
+	}
+
+	@Override
+	public String toString() {
+		return "\n\nAluno \n\nnumeroMatriculaAluno=" + numeroMatriculaAluno + "\nnome=" + nome + "\ndataNascimento="
+				+ dataNascimento + "\ncpf=" + cpf + "\nlogradouro=" + logradouro + "\nnumeroLogradouro="
+				+ numeroLogradouro + "\ncomplemento=" + complemento + "\nbairro=" + bairro + "\ncidade=" + cidade;
 	} 
+	
+	
 }

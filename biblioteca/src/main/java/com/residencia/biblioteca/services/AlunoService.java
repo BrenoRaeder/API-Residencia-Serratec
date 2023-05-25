@@ -19,6 +19,9 @@ public class AlunoService {
 	@Autowired
 	AlunoRepository alunoRepository;
 	
+	@Autowired
+	EmailService emailService;
+	
 	//métodos de regra de negócio e CRUD
 	
 	public List<Aluno> getAllAlunos() {
@@ -51,7 +54,12 @@ public class AlunoService {
 	}
 	
 	public Aluno saveAluno(Aluno aluno) {
-		return alunoRepository.save(aluno);
+		Aluno novoAluno = alunoRepository.save(aluno);
+		
+		emailService.enviarEmail("brenoraeder97@gmail.com", "Novo aluno API", 
+				"Olha esse novo aluno aqui cara, muito legal: \n" + novoAluno.toString());
+		
+		return novoAluno;
 	}
 	
 //	public AlunoDTO saveAlunoDTO(AlunoDTO alunoDTO) {

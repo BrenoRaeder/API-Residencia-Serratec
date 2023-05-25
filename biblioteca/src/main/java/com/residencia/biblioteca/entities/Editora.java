@@ -41,6 +41,7 @@ public class Editora {
 	@Column(name = "imagem_url")
 	private String imagemURL;
 	
+	
 	//relacoes
 	
 	@JsonManagedReference
